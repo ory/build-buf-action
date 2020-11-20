@@ -19,7 +19,7 @@ runs:
     - name: Maybe install and definitely invoke buf
       shell: bash
       run: |
-        source scripts/install-buf.sh ${{ inputs.bufVersion }}
+        source ${{ github.actions_path }}/scripts/install-buf.sh ${{ inputs.bufVersion }}
         buf ${{ inputs.bufArgs }}
 
 branding:
