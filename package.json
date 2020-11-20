@@ -1,0 +1,26 @@
+{
+  "name": "build-buf-action",
+  "private": true,
+  "description": "A GitHub action that provides [buf](https://github.com/bufbuild/buf).",
+  "main": "index.js",
+  "prettier": "ory-prettier-styles",
+  "config": {
+    "prettierTarget": "{*.yml,*.md}"
+  },
+  "scripts": {
+    "format": "prettier --write ${npm_package_config_prettierTarget}",
+    "format:check": "prettier --check ${npm_package_config_prettierTarget}"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ory/build-buf-action.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ory/build-buf-action/issues"
+  },
+  "homepage": "https://github.com/ory/build-buf-action#readme",
+  "devDependencies": {
+    "ory-prettier-styles": "^1.1.1",
+    "prettier": "^2.2.0"
+  }
+}
