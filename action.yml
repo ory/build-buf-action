@@ -1,8 +1,27 @@
 name: Build Buf
 description: A GitHub action that provides buildbuf/buf
+
+inputs:
+  bufVersion:
+    description: The version of buf to use (as in their GitHub releases)
+    default: v0.31.1
+    required: false
+  bufArgs:
+    description: The arguments to pass to buf
+    default: generate
+    required: false
+
 runs:
   using: composite
-  steps: [ ]
+  steps:
+    #    requires actions within actions as tracked in https://github.com/actions/runner/issues/646
+    #    - uses: actions/cache@v2
+    - name: Maybe install and definitely invoke buf
+      shell: bash
+      run: |
+        source scripts/install-buf.sh ${{ inputs.bufVersion }}
+        buf ${{ inputs.bufArgs }}
+
 branding:
   color: blue
   icon: box
