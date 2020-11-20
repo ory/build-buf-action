@@ -1,0 +1,8 @@
+name: Build Buf
+description: A GitHub action that provides buildbuf/buf
+runs:
+  using: composite
+  steps: [ ]
+branding:
+  color: blue
+  icon: box
