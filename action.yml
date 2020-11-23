@@ -12,7 +12,7 @@ inputs:
     required: false
   protocPlugins:
     description: The protoc language plugins to install, space separated. See README for supported plugins.
-    default: " "
+    default: "none"
     required: false
 
 runs:
