@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 UNAME_OS=$(uname -s)
 UNAME_ARCH=$(uname -m)
