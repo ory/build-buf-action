@@ -25,7 +25,7 @@ runs:
       run: |
         REPO_DIR="$(pwd)"
         cd ${{ github.action_path }}
-        source scripts/install-buf.sh ${{ inputs.bufVersion }} ${{ inputs.protocPlugins }}
+        source scripts/install-buf.sh ${{ inputs.bufVersion }} "${{ inputs.protocPlugins }}"
         cd $REPO_DIR
         buf ${{ inputs.bufArgs }}
 
