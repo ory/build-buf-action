@@ -8,12 +8,13 @@ A GitHub action that provides [buf](https://github.com/bufbuild/buf).
 name: Generate and Lint buf
 
 on:
-  pull_request:
+  push:
     branches:
-      - *
+      - '*'
+  workflow_dispatch:
 
 jobs:
-  lint:
+  lint-build:
     name: buf check lint
     runs-on: ubuntu-latest
     steps:
@@ -22,4 +23,20 @@ jobs:
         with:
           bufVersion: v0.31.1
           bufArgs: check lint --config buf/api/buf.yaml
+      - uses: ory/build-buf-action@v0
+        with:
+          bufVersion: v0.31.1
+          protocPlugins: go@v1.25.0 go-grpc@v1.0.1
+          bufArgs: generate --config buf/api/buf.yaml --template buf/api/buf.gen.yaml
+# Don't forget to commit and push after this step
 ```
+
+## Plugins
+
+`buf` requires you to install the protoc plugins for the languages you want to generate.
+Currently, the following plugins are available in the action:
+
+- [go](https://github.com/protocolbuffers/protobuf-go)
+- [go-grpc](https://github.com/grpc/grpc-go)
+
+Please open a PR to add install scripts for any missing plugin.
