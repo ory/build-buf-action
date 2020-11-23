@@ -8,7 +8,11 @@ inputs:
     required: false
   bufArgs:
     description: The arguments to pass to buf
-    default: generate
+    default: check lint
+    required: false
+  protocPlugins:
+    description: The protoc language plugins to install, space separated. See README for supported plugins.
+    default: ""
     required: false
 
 runs:
@@ -19,7 +23,10 @@ runs:
     - name: Maybe install and definitely invoke buf
       shell: bash
       run: |
-        source ${{ github.action_path }}/scripts/install-buf.sh ${{ inputs.bufVersion }}
+        REPO_DIR="$(pwd)"
+        cd ${{ github.action_path }}
+        source scripts/install-buf.sh ${{ inputs.bufVersion }} ${{ inputs.protocPlugins }}
+        cd $REPO_DIR
         buf ${{ inputs.bufArgs }}
 
 branding:
