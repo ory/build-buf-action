@@ -26,5 +26,5 @@ if [ ! -f ".bin/buf" ]; then
   chmod +x .bin/buf
 fi
 
-PATH=PATH:"$(pwd)/.bin"
+PATH=$PATH:"$(pwd)/.bin"
 export PATH
