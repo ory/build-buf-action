@@ -39,7 +39,7 @@ Currently, the following plugins are available in the action:
 - [go](https://github.com/protocolbuffers/protobuf-go)
 - [go-grpc](https://github.com/grpc/grpc-go)
 - [python_betterproto](https://github.com/danielgtaylor/python-betterproto)
-- [ts-protohttps://github.com/stephenh/ts-proto)
+- [ts-proto](https://github.com/stephenh/ts-proto)
 - [grpc-java](https://github.com/grpc/grpc-java)
 
 Please open a PR to add install scripts for any missing plugin.
