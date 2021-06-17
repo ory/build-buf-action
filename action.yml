@@ -11,8 +11,10 @@ inputs:
     default: check lint
     required: false
   protocPlugins:
-    description: The protoc language plugins to install, space separated. See README for supported plugins.
-    default: "none"
+    description:
+      The protoc language plugins to install, space separated. See README for
+      supported plugins.
+    default: 'none'
     required: false
 
 runs:
