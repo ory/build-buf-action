@@ -9,4 +9,4 @@ hash go 2>/dev/null || { echo >&2 "Failed to find go. Go is required to install 
 
 echo "Installing protoc-gen-validate $PLUGIN_VERSION"
   
-GO111MODULE=on go get github.com/envoyproxy/protoc-gen-validate@$PLUGIN_VERSION
+GO111MODULE=on GOBIN="$(pwd)/.bin" go get github.com/envoyproxy/protoc-gen-validate@$PLUGIN_VERSION
