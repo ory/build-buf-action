@@ -28,7 +28,7 @@ jobs:
           bufVersion: v0.31.1
           protocPlugins:
             go@v1.25.0 go-grpc@v1.0.1 python_betterproto@2.0.0b2 ts-proto@1.39.0
-            grpc-java@1.34.0 envoy-validate@v0.6.1
+            grpc-java@1.34.0 envoy-gen-validate@v0.6.1
           bufArgs:
             generate --config buf/api/buf.yaml --template buf/api/buf.gen.yaml
 # Don't forget to commit and push after this step
@@ -41,7 +41,7 @@ generate. Currently, the following plugins are available in the action:
 
 - [go](https://github.com/protocolbuffers/protobuf-go)
 - [go-grpc](https://github.com/grpc/grpc-go)
-- [envoy-validate](https://github.com/envoyproxy/protoc-gen-validate)
+- [envoy-gen-validate](https://github.com/envoyproxy/protoc-gen-validate)
 - [python_betterproto](https://github.com/danielgtaylor/python-betterproto)
 - [ts-proto](https://github.com/stephenh/ts-proto)
 - [grpc-java](https://github.com/grpc/grpc-java)
