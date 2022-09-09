@@ -10,7 +10,7 @@ name: Generate and Lint buf
 on:
   push:
     branches:
-      - '*'
+      - "*"
   workflow_dispatch:
 
 jobs:
