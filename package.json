@@ -11,10 +11,6 @@
     "url": "git+https://github.com/ory/build-buf-action.git"
   },
   "main": "index.js",
-  "scripts": {
-    "format": "prettier --write .",
-    "format:check": "prettier --check ."
-  },
   "prettier": "ory-prettier-styles",
   "devDependencies": {
     "ory-prettier-styles": "1.3.0",
