@@ -1,6 +1,6 @@
-format: node_modules .bin/ory  # formats all source code
-	npm exec -- prettier --write .
+format: .bin/ory node_modules  # formats all source code
 	.bin/ory dev headers license
+	npm exec -- prettier --write .
 
 help:  # prints all make targets
 	cat Makefile | grep '^[^ ]*:' | grep -v '^\.bin/' | grep -v '.SILENT:' | grep -v '^node_modules:' | grep -v help | sed 's/:.*#/#/' | column -s "#" -t
