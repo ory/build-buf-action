@@ -1,5 +1,5 @@
 format: .bin/ory node_modules  # formats all source code
-	.bin/ory dev headers license
+	.bin/ory dev headers license --exclude=node_modules
 	npm exec -- prettier --write .
 
 help:  # prints all make targets
