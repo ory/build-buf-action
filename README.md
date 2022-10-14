@@ -1,5 +1,7 @@
 # Build Buf GitHub Action
 
+[![Licenses](https://github.com/ory/build-buf-action/actions/workflows/licenses.yml/badge.svg)](https://github.com/ory/build-buf-action/actions/workflows/licenses.yml)
+
 A GitHub action that provides [buf](https://github.com/bufbuild/buf).
 
 ## Usage
